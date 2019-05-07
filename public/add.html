@@ -1,79 +1,99 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Add Application</title>
 
-        <!--Boostrap-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<head>
+  <title>Add Application</title>
 
-        <!--CSS-->
-        <link rel="stylesheet" type="text/css" href="../public/styles/styles.css">
+  <!--Boostrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        <!--Font Awesome-->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <!--CSS-->
+  <!-- <link rel="stylesheet" type="text/css" href="../public/styles/styles.css"> -->
 
-    </head>
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+</head>
 
-    <div class="jumbotron">
-      <h1>Add a New Application</h1>
-      <h3>Fill in the information of your job below</h3>
-      <hr>
-      <a href="view.html" class="btn btn-danger btn-lg" id="view-add">
-        <span class="fa fa-eye"></span>View All Jobs</a>
-    </div>
-    <div class="row">
+<div class="jumbotron">
+  <h1>Add a New Application</h1>
+  <h3>Fill in the information of your job below</h3>
+  <hr>
+  <a href="view.html" class="btn btn-danger btn-lg" id="view-add">
+    <span class="fa fa-eye"></span>View All Jobs</a>
+</div>
+<div class="row">
 
-      <div class="col-lg-12">
+  <div class="col-lg-12">
 
-        <div class="card">
-          <div class="card-header">
-            Application Info
-          </div>
-          <div class="card-body">
-            <form action="" method="POST" role="form">
-
-              <div class="form-group">
-                <label for="">Company Name*</label>
-                <input type="text" class="form-control" id="company-name" placeholder="">
-              </div>
-
-              <div class="form-group">
-                    <label for="">Date Applied*</label>
-                    <input type="text" class="form-control" id="date-applied" placeholder="">
-                  </div>
-
-              <div class="form-group">
-                <label for="">Role Interviewed For</label>
-                <input type="text" class="form-control" id="role" placeholder="">
-              </div>
-
-              <div class="form-group">
-                <label for="">Interview Date</label>
-                <input type="text" class="form-control" id="date" placeholder="">
-              </div>
-
-              <div class="form-group">
-                <label for="">Interviewee's Name</label>
-                <input type="text" class="form-control" id="interviewee-name" placeholder="">
-              </div>
-
-              <div class="form-group">
-                    <label for="">Contact Info</label>
-                    <input type="text" class="form-control" id="force-points" placeholder="">
-                  </div>
-            </form>
-            <br>
-            <div class="text-right">
-              <button type="submit" class="btn btn-primary btn-md" id="add-btn">
-                <span class="fa fa-fire"></span>Add Application</button>
-                <p>test for heroku</p>
-            </div>
-          </div>
-
+    <div class="card">
+      <div class="card-header">
+        Application Info
       </div>
+      <div class="card-body">
+        <form action="" method="POST" role="form">
+
+          <div class="form-group">
+            <label for="">Company Name*</label>
+            <input type="text" class="form-control" id="company-name" placeholder="">
+          </div>
+
+          <div class="form-group">
+            <label for="">Date Applied*</label>
+            <input type="date" class="form-control" id="date-applied" placeholder="">
+          </div>
+
+          <div class="form-group">
+            <label for="">Role Interviewed For</label>
+            <input type="text" class="form-control" id="role" placeholder="">
+          </div>
+
+          <div class="form-group">
+            <label for="">Resume Link</label>
+            <input type="text" class="form-control" id="resume" placeholder="">
+          </div>
+
+          <div class="form-group">
+            <label for="">Interview Date</label>
+            <input type="date" class="form-control" id="date" placeholder="">
+          </div>
+
+          <div class="form-group">
+            <label for="">Interviewee's Name</label>
+            <input type="text" class="form-control" id="interviewee-name" placeholder="">
+          </div>
+
+          <div class="form-group">
+            <label for="">Contact Info</label>
+            <input type="text" class="form-control" id="contact-info" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="">Comments</label>
+            <input type="text" class="form-control" id="comments" placeholder="">
+          </div>
+          <div class="form-group">
+            <label for="">job Offered</label>
+            <input type="text" class="form-control" id="status" placeholder="">
+          </div>
+          
+        </form>
+        <br>
+        <div class="text-right">
+          <button type="submit" class="btn btn-primary btn-md" id="add-btn">
+            <span class="fa fa-fire"></span>Add Application</button>
+          <p>test for heroku</p>
+        </div>
+      </div>
+
     </div>
   </div>
+</div>
 
-  <script src="js/add.js" type="text/javascript"></script>
+<script src="js/job.js" type="text/javascript"></script>
 
-  </html>
+</html>
