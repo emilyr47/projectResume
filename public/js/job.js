@@ -54,11 +54,13 @@ var refreshJobs = function() {
         })
         .append($a);
 
-      // var $button = $("<button>")
-      //   .addClass("btn btn-danger float-right delete")
-      //   .text("ｘ");
+      var $deleteButton = $("<button>")
+        .addClass("btn btn-danger float-right delete")
+        .text("ｘ");
 
-      // $li.append($button);
+      $li.append($deleteButton);
+
+      $deleteButton.on("click", handleDeleteBtnClick);
 
       return $li;
     });
