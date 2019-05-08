@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
   <!--CSS-->
-  <link rel="stylesheet" type="text/css" href="../public/styles/styles.css">
+  <!-- <link rel="stylesheet" type="text/css" href="../public/styles/styles.css"> -->
 
   <!--Font Awesome-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,7 +19,10 @@
 
   <!--Boostrap JavaScript-->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -42,7 +45,7 @@
             Application Database
           </div>
           <div class="card-body" id="well-section">
-
+<div id ="job-list"></div>
             <!-- Content will go in here -->
 
           </div>
@@ -50,7 +53,13 @@
       </div>
     </div>
 
-  <script src="js/all.js" type="text/javascript"></script>
+  <script src="js/job.js" type="text/javascript"></script>
+
+  <script>
+  $(document).ready(function(){
+    refreshJobs();
+  })
+  </script>
 
 </body>
 
