@@ -2,11 +2,39 @@
   line-height: 2.5;
 }
 
-#add {
-  
+h1 {
+  margin-left: 500px;
+  margin-top: 50px;
+  font-family: 'Lato', sans-serif;
+  color: #A9A9A9;
+}
+
+#subtitle {
+  margin-left: 590px;
+  font-family: 'Lato', sans-serif;
+  color: #A9A9A9;
+
+}
+
+#view-home {
+  margin-left: 475px;
+  font-family: 'Lato', sans-serif;
+  background-color: #CAEBF2;
+  color: black;
+}
+
+#add-home {
+  align: center;
+  font-family: 'Lato', sans-serif;
+  background-color: #CAEBF2;
+  color: black;
 }
 
 #par1_home {
-  margin-left: 30px;
-  margin-top: 30px;
+  margin-top: 100px;
+  margin-left: 50px;
+  font-family: 'Lato', sans-serif;
 }
+
+
+
