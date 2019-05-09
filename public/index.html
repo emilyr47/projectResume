@@ -8,29 +8,50 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!--CSS-->
-    <!-- <link rel="stylesheet" type="text/css" href="../public/styles/styles.css"> -->
+     <link rel="stylesheet" type="text/css" href="../public/styles/styles.css"> 
 
     <!--Font Awesome-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!--Script-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    
 </head>
 
-<body>
-    <div class="jumbotron">
+<body onload="typeWriter()">
         <h1 class="display-4">Resume Tracker</h1>
-        <p class="lead">Welcome to your new way to land a job.</p>
+        
+        <p class="lead" id="subtitle"></p>
         <hr class="my-4">
         <p></p>
         <p class="lead">
             <a class="btn btn-primary btn-lg" href="view.html" id="view-home" role="button">View My Applications</a>
             <a class="btn btn-primary btn-lg" id="add-home" href="add.html" role="button">Add a New Application</a>
         </p>
-    </div>
-    <h2 id="par1_home">
-        Congratulations! You have applied for ___ jobs!
+    <h2 id="par1_home" onload="displayJobs()">
+        Jobs You Might Want:
     </h2>
 </body>
+
+<script>
+        var i = 0;
+        var txt = 'Welcome to your new way to land a job';
+        var speed = 50;
+        
+        function typeWriter() {
+          if (i < txt.length) {
+            document.getElementById("subtitle").innerHTML += txt.charAt(i);
+            i++;
+            setTimeout(typeWriter, speed);
+          }
+        }
+
+        function displayJobs() {
+
+        }
+        </script>
 
 </html>
