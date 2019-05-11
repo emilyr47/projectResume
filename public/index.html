@@ -3,18 +3,20 @@
 
 <head>
     <title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/resume-favicon.png" type="image/x-icon">
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!--CSS-->
-     <link rel="stylesheet" type="text/css" href="../public/styles/styles.css"> 
+     <link rel="stylesheet" type="text/css" href="styles/styles.css"> 
 
     <!--Font Awesome-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
     <!--Script-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="crossorigin="anonymous"></script>
 
     <!--Google Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -27,19 +29,20 @@
             $('body').removeClass('fade-out');
         });
     </script>
+
     <div id="container">
-<div id="banner">
-  <!-- Top Navigation Menu -->
+
+      <!--Nav Bar-->
 <div class="topnav">
-    <a href="#home" class="active" id="resume1">Resume Tracker</a>
-    <!-- Navigation links (hidden by default) -->
+    <a href="#home" class="active" id="resume1">Resume Tracker<link rel="icon" href="img/resume-favicon.png" type="image/x-icon"></a>
+    <!-- Nav Links-->
     <div id="myLinks">
         <a href="index.html">Home</a>
         <a href="add.html">Add New Application</a>
         <a href="view.html">View Applications</a>
     </div>
-    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <!--Nav Menu-->
+    <a href="javascript:void(0);" class="icon" onclick="myMenu()">
       <i class="fa fa-bars"></i>
     </a>
   </div>
@@ -52,50 +55,50 @@
             <a class="btn btn-primary btn-lg" href="view.html" id="view-home" role="button">View My Applications</a>
             <a class="btn btn-primary btn-lg" id="add-home" href="add.html" role="button">Add a New Application</a>
         </p>
-    <h2 id="par1_home" onload="displayJobs()">
-        Your Recommended Jobs:
+    <h2 id="par1_home" onload="displayApps()">
+        Your Recent Applications:
     </h2><br>
-    <div class="row">
-            <div class="col-sm-3">
-              <div class="card" id=card1>
-                <div class="card-body">
-                  <h5 class="card-title">Web Developer</h5>
-                  <p class="card-text">Full time web developer position at IBM</p>
-                  <a href="#" class="btn btn-primary" id="apply">Apply</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3">
-              <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Web Developer</h5>
-                  <p class="card-text">Full time web developer position at IBM</p>
-                  <a href="#" class="btn btn-primary" id="apply">Apply</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-3">
-                    <div class="card">
-                      <div class="card-body">
-                        <h5 class="card-title">Web Developer</h5>
-                        <p class="card-text">Full time web developer position at IBM</p>
-                        <a href="#" class="btn btn-primary" id="apply">Apply</a>
-                      </div>
-                    </div>
+          <div class="row">
+              <div class="col-sm-3">
+                <div class="card" id=reminder-card>
+                  <div class="card-body">
+                    <h5 class="card-title" id="card-title"></h5>
+                    <p class="card-text" id="card-text"></p>
+                    <a href="#" class="btn btn-primary" id="complete">View Info</a>
                   </div>
-                  <div class="col-sm-3">
-                        <div class="card">
-                          <div class="card-body">
-                            <h5 class="card-title">Web Developer</h5>
-                            <p class="card-text">Full time web developer position at IBM</p>
-                            <a href="#" class="btn btn-primary" id="apply">Apply</a>
-                          </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <div class="card" id=reminder-card>
+                  <div class="card-body">
+                    <h5 class="card-title" id="card-title"></h5>
+                    <p class="card-text" id="card-text"></p>
+                    <a href="#" class="btn btn-primary" id="complete">View Info</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                      <div class="card" id=reminder-card>
+                        <div class="card-body">
+                          <h5 class="card-title" id="card-title"></h5>
+                          <p class="card-text" id="card-text"></p>
+                          <a href="#" class="btn btn-primary" id="complete">View Info</a>
                         </div>
                       </div>
-          </div>
+                    </div>
+                    <div class="col-sm-3">
+                          <div class="card" id=reminder-card>
+                            <div class="card-body">
+                              <h5 class="card-title" id="card-title"></h5>
+                              <p class="card-text" id="card-text"></p>
+                              <a href="#" class="btn btn-primary" id="complete">View Info</a>
+                            </div>
+                          </div>
+                        </div>
+            </div>
           
-</div><br><br><br>
-<footer>
+
+<footer id="footer">
   Copyright© 2019 Resume Tracker
 </footer>
 </div>
@@ -104,7 +107,7 @@
 <script>
 
   /* Toggle between showing and hiding the navigation menu links when the user clicks on the hamburger menu / bar icon */
-function myFunction() {
+function myMenu() {
   var x = document.getElementById("myLinks");
   if (x.style.display === "block") {
     x.style.display = "none";
@@ -124,8 +127,9 @@ function myFunction() {
           }
         }
 
-        function displayJobs() {
-
+        function displayApps() {
+          $("#card-title").html(job.company);
+          $("#card-text").html(job.appliedDate);
         }
 
 
