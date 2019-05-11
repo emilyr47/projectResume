@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "root",
-    "password": "root",
+    "process.env.password": "root",
     "database": "applicationsdb",
-    "port": 3307,
+    "process.env.port": 8889,
     "host": "localhost",
     "dialect": "mysql"
   },
