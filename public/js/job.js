@@ -41,7 +41,7 @@ var API = {
         "Content-Type": "application/json"
       },
       url: "/api/jobposts/" + id,
-      type: "DELETE"
+      type: "PUT"
     });
   }
 };
@@ -137,21 +137,29 @@ var handleDeleteBtnClick = function() {
 $submitBtn.on("click", handleFormSubmit);
 
 function populateJob() {
+
   const url = window.location.pathname;
   const jobId = url.split("/")[2];
 
-  API.getJob(jobId).then(function(job) {
-    $("#company-name").val(job.company);
-    $("#date-applied").val(job.appliedDate),
-      $("#role").val(job.position),
-      $("#contact-info").val(job.contactInfo),
-      $("#resume").val(job.resumeLink),
-      $("#date").val(job.interviewDate),
-      $("#interviewee-name").val(job.interviweeName),
-      $("#status").val(job.jobOffered),
-      $("#comments").val(job.comments);
-    $("#add-btn").text("Update Application");
-  });
+  if (jobId){
+
+    API.getJob(jobId).then(function(job) {
+      console.log("getJobx");
+      console.log(moment(job.interviewDate).format("MM/DD/YYYY"));
+      $("#company-name").val(job.company);
+      $("#date-applied").val(job.appliedDate),
+        $("#role").val(job.position),
+        $("#contact-info").val(job.contactInfo),
+        $("#resume").val(job.resumeLink),
+        $("#date").val(moment(job.interviewDate).format("MM/DD/YYYY")),
+        $("#interviewee-name").val(job.interviweeName),
+        $("#status").val(job.jobOffered),
+        $("#comments").val(job.comments);
+        $("#id").val(jobId);
+        $("#add-btn").text("Update Application");
+        console.log("getJoby");
+    });
+  }
 }
 
 function displayTable(jobs) {
@@ -184,16 +192,22 @@ function displayTable(jobs) {
     const dateTd = $("<td>");
     dateTd.text(job.appliedDate);
     const daysTd = $("<td>");
-    const today = moment().format();
-    const appliedDate = job.appliedDate;
-    console.log(today);
+    const appliedDate = moment(job.appliedDate).format("MM/DD/YYYY");
+
     console.log(appliedDate);
-    const b = today - appliedDate;
+    const b = moment(appliedDate).diff(moment(), "days");
     console.log(b);
 
-    daysTd.text();
+    daysTd.text(b);
     const editTd = $("<td>");
+    const editBtn = $("<button>");
+
+    editTd.append(editBtn)
+    editBtn.addClass("edit-btn").text("~");
     const deleteTd = $("<td>");
+    const deleteBtn = $("<button>");
+    deleteTd.append(deleteBtn)
+    deleteBtn.addClass("delete-btn").text("x");
 
     jobTr.append(companyTd, postionTd, dateTd, daysTd, editTd, deleteTd);
   });
