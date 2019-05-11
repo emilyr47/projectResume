@@ -2,9 +2,22 @@ var db = require("../models");
 
 module.exports = function(app) {
   // Get all jobs
-  app.get("/api/view", function(req, res) {
+  app.get("/api/jobposts", function(req, res) {
     db.Jobs.findAll({}).then(function(dbJobs) {
       res.json(dbJobs);
+    });
+  });
+
+  // Find one job
+
+  app.get("/api/jobposts/:id", function(req, res) {
+    const jobId = req.params.id;
+    db.Jobs.findOne({
+      where: {
+        id: jobId
+      }
+    }).then(function(dbJob) {
+      res.json(dbJob);
     });
   });
 
@@ -14,7 +27,6 @@ module.exports = function(app) {
     const job = req.body;
     console.log(job);
     db.Jobs.create(job).then(function(dbJobs) {
-
       res.json(dbJobs);
     });
   });
@@ -24,7 +36,7 @@ module.exports = function(app) {
     db.Jobs.destroy({ where: { id: req.params.id } }).then(function(dbJobs) {
       res.json(dbJobs);
     });
-  }
+  });
   app.put("/api/jobposts", function(req, res) {
     // Add code here to update a post using the values in req.body, where the id is equal to
     // req.body.id and return the result to the user using res.json
@@ -50,27 +62,28 @@ module.exports = function(app) {
     });
   });
 
-
-app.put("/api/view", function (req, res) {
-  // Add code here to update a post using the values in req.body, where the id is equal to
-  // req.body.id and return the result to the user using res.json
-  db.Jobs.update({
-    company:req.body.company,
-    position:req.body.position,
-    appliedDate: req.body.appliedDate,
-    contactInfo: req.body.contactInfo,
-    resumeLink: req.body.resumeLink,
-    interviewDate: req.body.interviewDate,
-    InterviweeName: req.body.InterviweeName,
-    JobOffered: req.body.JobOffered,
-    comments: req.body.comments
-  }, {
-      where: {
-        id: req.body.id
+  app.put("/api/jobposts", function(req, res) {
+    // Add code here to update a post using the values in req.body, where the id is equal to
+    // req.body.id and return the result to the user using res.json
+    db.Jobs.update(
+      {
+        company: req.body.company,
+        position: req.body.position,
+        appliedDate: req.body.appliedDate,
+        contactInfo: req.body.contactInfo,
+        resumeLink: req.body.resumeLink,
+        interviewDate: req.body.interviewDate,
+        InterviweeName: req.body.InterviweeName,
+        JobOffered: req.body.JobOffered,
+        comments: req.body.comments
+      },
+      {
+        where: {
+          id: req.body.id
+        }
       }
-    }
-  ).then(function (dbJobs) {
-    res.json(dbJobs);
-  })
-});
+    ).then(function(dbJobs) {
+      res.json(dbJobs);
+    });
+  });
 };

@@ -14,114 +14,119 @@
   <!--Font Awesome-->
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-    <script
-    src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <div id="container">
-  <!-- Top Navigation Menu -->
-<div class="topnav">
-    <a href="#home" class="active" id="resume1">Resume Tracker</a>
-    <!-- Navigation links (hidden by default) -->
-    <div id="myLinks">
-      <a href="index.html">Home</a>
-      <a href="add.html">Add New Application</a>
-      <a href="view.html">View Applications</a>
-    </div>
-    <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
-  <h1>Add a New Application</h1>
-  <p id="dots">•••</p>
-  <a href="view.html" class="btn btn-danger btn-lg" id="view-add">View All Jobs</a>
-  <h3>Fill in the information of your job below</h3>
-  <hr>
-
-<div class="row">
-
-  <div class="col-lg-12" id="form-background">
-
-    <div class="card" id="form">
-      <div class="card-header">
-        Application Info
+    <!-- Top Navigation Menu -->
+    <div class="topnav">
+      <a href="#home" class="active" id="resume1">Resume Tracker</a>
+      <!-- Navigation links (hidden by default) -->
+      <div id="myLinks">
+        <a href="index.html">Home</a>
+        <a href="add.html">Add New Application</a>
+        <a href="/view.html">View Applications</a>
       </div>
-      <div class="card-body">
-        <form action="" method="POST" role="form">
+      <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <h1>Add a New Application</h1>
+    <p id="dots">•••</p>
+    <a href="/view.html" class="btn btn-danger btn-lg" id="view-add">View All Jobs</a>
+    <h3>Fill in the information of your job below</h3>
+    <hr>
 
-          <div class="form-group">
-            <label for="">Company Name*</label>
-            <input type="text" class="form-control" id="company-name" placeholder="">
+    <div class="row">
+
+      <div class="col-lg-12" id="form-background">
+
+        <div class="card" id="form">
+          <div class="card-header">
+            Application Info
+          </div>
+          <div class="card-body">
+            <form action="" method="POST" role="form">
+
+              <div class="form-group">
+                <label for="">Company Name*</label>
+                <input type="text" class="form-control" id="company-name" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="">Date Applied*</label>
+                <input type="date" class="form-control" id="date-applied" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="">Role Interviewed For</label>
+                <input type="text" class="form-control" id="role" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="">Resume Link</label>
+                <input type="text" class="form-control" id="resume" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="">Interview Date</label>
+                <input type="date" class="form-control" id="date" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="">Interviewee's Name</label>
+                <input type="text" class="form-control" id="interviewee-name" placeholder="">
+              </div>
+
+              <div class="form-group">
+                <label for="">Contact Info</label>
+                <input type="text" class="form-control" id="contact-info" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="">Comments</label>
+                <input type="text" class="form-control" id="comments" placeholder="">
+              </div>
+              <div class="form-group">
+                <label for="">Job Offered</label>
+                <input type="text" class="form-control" id="status" placeholder="">
+              </div>
+
+            </form>
+            <br>
+            <div class="text-right">
+              <button type="submit" class="btn btn-primary btn-md" id="add-btn">
+                Add Application</button>
+            </div>
           </div>
 
-          <div class="form-group">
-            <label for="">Date Applied*</label>
-            <input type="date" class="form-control" id="date-applied" placeholder="">
-          </div>
-
-          <div class="form-group">
-            <label for="">Role Interviewed For</label>
-            <input type="text" class="form-control" id="role" placeholder="">
-          </div>
-
-          <div class="form-group">
-            <label for="">Resume Link</label>
-            <input type="text" class="form-control" id="resume" placeholder="">
-          </div>
-
-          <div class="form-group">
-            <label for="">Interview Date</label>
-            <input type="date" class="form-control" id="date" placeholder="">
-          </div>
-
-          <div class="form-group">
-            <label for="">Interviewee's Name</label>
-            <input type="text" class="form-control" id="interviewee-name" placeholder="">
-          </div>
-
-          <div class="form-group">
-            <label for="">Contact Info</label>
-            <input type="text" class="form-control" id="contact-info" placeholder="">
-          </div>
-          <div class="form-group">
-            <label for="">Comments</label>
-            <input type="text" class="form-control" id="comments" placeholder="">
-          </div>
-          <div class="form-group">
-            <label for="">Job Offered</label>
-            <input type="text" class="form-control" id="status" placeholder="">
-          </div>
-          
-        </form>
-        <br>
-        <div class="text-right">
-          <button type="submit" class="btn btn-primary btn-md" id="add-btn">
-           Add Application</button>
         </div>
-      </div>
-
+      </div><br><br><br>
+      <footer>
+        Copyright© 2019 Resume Tracker
+      </footer>
     </div>
-  </div><br><br><br>
-  <footer>
-    Copyright© 2019 Resume Tracker
-  </footer>
-</div>
-</div>
-  </body>
+  </div>
+</body>
 
-<script src="js/job.js" type="text/javascript"></script>
+<script src="/js/job.js" type="text/javascript"></script>
 <script>
-function myFunction() {
-  var x = document.getElementById("myLinks");
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
+  $(document).ready(function () {
+    populateJob();
+  })
+
+
+
+  function myFunction() {
+    var x = document.getElementById("myLinks");
+    if (x.style.display === "block") {
+      x.style.display = "none";
+    } else {
+      x.style.display = "block";
+    }
   }
-}
 </script>
 
 </html>
