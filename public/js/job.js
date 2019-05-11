@@ -48,6 +48,10 @@ var API = {
 
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshJobs = function() {
+  API.getJobs().then(function(jobs) {
+    displayTable(jobs);
+  });
+
   API.getJobs().then(function(data) {
     var $jobs = data.map(function(job) {
       var $a = $("<a>")
@@ -146,8 +150,51 @@ function populateJob() {
       $("#interviewee-name").val(job.interviweeName),
       $("#status").val(job.jobOffered),
       $("#comments").val(job.comments);
-      $("#add-btn").text("Update Application")
+    $("#add-btn").text("Update Application");
+  });
+}
 
-    console.log(job);
+function displayTable(jobs) {
+  const table = $("#display-info");
+  const headerTr = $("<tr>");
+  table.append(headerTr);
+
+  const columns = [
+    "company",
+    "Position",
+    "Date Applied",
+    "Days Applied",
+    "Edit",
+    "Delete"
+  ];
+  columns.forEach(column => {
+    const th = $("<th>");
+    th.text(column);
+    headerTr.append(th);
+  });
+
+  jobs.forEach(function(job) {
+    const jobTr = $("<tr>");
+    table.append(jobTr);
+
+    const companyTd = $("<td>");
+    companyTd.text(job.company);
+    const postionTd = $("<td>");
+    postionTd.text(job.position);
+    const dateTd = $("<td>");
+    dateTd.text(job.appliedDate);
+    const daysTd = $("<td>");
+    const today = moment().format();
+    const appliedDate = job.appliedDate;
+    console.log(today);
+    console.log(appliedDate);
+    const b = today - appliedDate;
+    console.log(b);
+
+    daysTd.text();
+    const editTd = $("<td>");
+    const deleteTd = $("<td>");
+
+    jobTr.append(companyTd, postionTd, dateTd, daysTd, editTd, deleteTd);
   });
 }
