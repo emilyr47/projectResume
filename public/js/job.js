@@ -1,8 +1,5 @@
 // Get references to page elements
 var $submitBtn = $("#add-btn");
-// var $jobText = $("#job-text");
-// var $jobDescription = $("#job-description");
-// var $jobList = $("#job-list");
 
 // The API object contains methods for each kind of request we'll make
 var API = {
@@ -52,34 +49,6 @@ var refreshJobs = function() {
   API.getJobs().then(function(jobs) {
     displayTable(jobs);
   });
-
-  // API.getJobs().then(function(data) {
-  //   var $jobs = data.map(function(job) {
-  //     var $a = $("<a>")
-  //       .text(job.company)
-  //       .attr("href", "/job/" + job.id);
-
-  //     var $li = $("<li>")
-  //       .attr({
-  //         class: "list-group-item",
-  //         "data-id": job.id
-  //       })
-  //       .append($a);
-
-  //     var $deleteButton = $("<button>")
-  //       .addClass("btn btn-danger float-right delete")
-  //       .text("ｘ");
-
-  //     $li.append($deleteButton);
-
-  // $deleteButton.on("click", handleDeleteBtnClick);
-
-  //     return $li;
-  //   });
-
-  //   $jobList.empty();
-  //   $jobList.append($jobs);
-  // });
 };
 
 // handleFormSubmit is called whenever we submit a new example
@@ -131,10 +100,6 @@ var handleFormSubmit = function(event) {
 // handleDeleteBtnClick is called when an example's delete button is clicked
 // Remove the example from the db and refresh the list
 var handleDeleteBtnClick = function(idToDelete) {
-  // var idToDelete = $(this)
-  //   .parent()
-  //   .attr("data-id");
-
   API.deleteJob(idToDelete).then(function() {
     location.reload();
   });
