@@ -14,7 +14,7 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/add.html"));
   });
   // update application
-  app.get("/job/id", function(req, res) {
+  app.get("/job/:id", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/add.html"));
   });
 

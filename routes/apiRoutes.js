@@ -37,52 +37,15 @@ module.exports = function(app) {
       res.json(dbJobs);
     });
   });
-  app.put("/api/jobposts", function(req, res) {
+  app.put("/api/jobposts/:id", function(req, res) {
+    console.log(req.body.id);
     // Add code here to update a post using the values in req.body, where the id is equal to
     // req.body.id and return the result to the user using res.json
-    db.Jobs.update(
-      {
-        company: DataTypes.STRING,
-        position: DataTypes.STRING,
-        appliedDate: DataTypes.DATE,
-        contactInfo: DataTypes.TEXT,
-        resumeLink: DataTypes.STRING,
-        interviewDate: DataTypes.DATE,
-        interviweeName: DataTypes.STRING,
-        jobOffered: DataTypes.BOOLEAN,
-        comments: DataTypes.TEXT
-      },
-      {
-        where: {
-          id: req.body.id
-        }
+    db.Jobs.update(req.body, {
+      where: {
+        id: req.body.id
       }
-    ).then(function(dbJobs) {
-      res.json(dbJobs);
-    });
-  });
-
-  app.put("/api/jobposts", function(req, res) {
-    // Add code here to update a post using the values in req.body, where the id is equal to
-    // req.body.id and return the result to the user using res.json
-    db.Jobs.update(
-      {
-        company: req.body.company,
-        position: req.body.position,
-        appliedDate: req.body.appliedDate,
-        contactInfo: req.body.contactInfo,
-        resumeLink: req.body.resumeLink,
-        interviewDate: req.body.interviewDate,
-        InterviweeName: req.body.InterviweeName,
-        JobOffered: req.body.JobOffered,
-        comments: req.body.comments
-      },
-      {
-        where: {
-          id: req.body.id
-        }
-      }
-    ).then(function(dbJobs) {
+    }).then(function(dbJobs) {
       res.json(dbJobs);
     });
   });
