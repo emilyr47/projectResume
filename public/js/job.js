@@ -133,27 +133,28 @@ function populateJob() {
 
 function displayTable(jobs) {
   const table = $("#display-info");
-  const headerTr = $("<tr>");
-  table.append(headerTr);
+  // const headerTr = $("<tr>");
+  // table.append(headerTr);
 
-  const columns = [
-    "company",
-    "Position",
-    "Date Applied",
-    "Days Applied",
-    "Edit",
-    "Delete"
-  ];
-  columns.forEach(column => {
-    const th = $("<th>");
-    th.text(column);
-    headerTr.append(th);
-  });
+  // const columns = [
+  //   "company",
+  //   "Position",
+  //   "Date Applied",
+  //   "Days Applied",
+  //   "Edit",
+  //   "Delete"
+  // ];
+  // columns.forEach(column => {
+  //   const th = $("<th>");
+  //   th.text(column);
+  //   headerTr.append(th);
+  // });
 
-  jobs.forEach(function(job) {
+  jobs.forEach(function(job, i) {
     const jobTr = $("<tr>");
     table.append(jobTr);
-
+    const counterTd = $("<th>");
+    counterTd.attr("scope", "row").text(i + 1);
     const companyTd = $("<td>");
     companyTd.text(job.company);
     const postionTd = $("<td>");
@@ -165,24 +166,34 @@ function displayTable(jobs) {
     const daysTd = $("<td>");
 
     console.log(appliedDate);
-    const b = moment(appliedDate).diff(moment(), "days");
+    const b = moment().diff(moment(appliedDate), "days");
     console.log(b);
-
     daysTd.text(b);
     const editTd = $("<td>");
-    const editBtn = $("<a>");
-    editBtn.attr("href", "/job/" + job.id);
+    const editBtn = $("<button>");
+    editBtn.addClass("edit");
+    const editLink = $("<a>");
+    editLink.attr("href", "/job/" + job.id);
+    editLink.attr("class", "editBtn").text("Edit");
 
+    editBtn.append(editLink);
     editTd.append(editBtn);
-    editBtn.addClass("edit-btn").text("~");
     const deleteTd = $("<td>");
     const deleteBtn = $("<button>");
     deleteTd.append(deleteBtn);
-    deleteBtn.addClass("delete-btn").text("x");
+    deleteBtn.addClass("delete").text("Delete");
     deleteBtn.click(function() {
       handleDeleteBtnClick(job.id);
     });
 
-    jobTr.append(companyTd, postionTd, dateTd, daysTd, editTd, deleteTd);
+    jobTr.append(
+      counterTd,
+      companyTd,
+      postionTd,
+      dateTd,
+      daysTd,
+      editTd,
+      deleteTd
+    );
   });
 }
