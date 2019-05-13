@@ -196,7 +196,7 @@ font-family: 'Lato', sans-serif;
   color: rgba(172, 132, 132, 0.2);
 }
 
-#edit {
+.edit {
   background-color: #FF3B3F;
   color: black;
   overflow: hidden;
@@ -205,12 +205,15 @@ font-family: 'Lato', sans-serif;
   align-content: right;
 }
 
-#edit:hover {
+.edit:hover {
   box-shadow: 20px 20px 40px 0px rgba(0,0,0,0.5);
   cursor: pointer;
 }
+.edit .editBtn{
+  color: black;
 
-#delete {
+}
+.delete {
   background-color: #FF3B3F;
   color: black;
   overflow: hidden;
@@ -219,7 +222,7 @@ font-family: 'Lato', sans-serif;
   align-content: right;
 }
 
-#delete:hover {
+.delete:hover {
   box-shadow: 20px 20px 40px 0px rgba(0,0,0,0.5);
   cursor: pointer;
 }
