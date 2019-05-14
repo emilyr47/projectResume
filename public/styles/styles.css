@@ -290,11 +290,11 @@ footer {
   background: rgba(202, 235, 242, 0.6);
 }
 
-
-
-
-
-
+#checkbox {
+  width: 75px;
+  text-align: left;
+  background-color: rgba(202, 235, 242, 0.6);
+}
 
 
 
