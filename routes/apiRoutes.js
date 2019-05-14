@@ -28,31 +28,37 @@ module.exports = function(app) {
     const job = req.body;
     console.log(job);
     db.Jobs.create(job).then(function(dbJobs) {
-      var transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-          user: key.gmail.user,
-          pass: key.gmail.pass
-        }
-      });
-      
-      var mailOptions = {
-        from: 'dimbaslv@gmail.com',
-        to: 'petrenko.mitya@gmail.com',
-        subject: 'Sending Email using Node.js',
-        text: 'That was easy!'
-      };
-      
-      transporter.sendMail(mailOptions, function(error, info){
+      function sendEmail(){
+        var transporter = nodemailer.createTransport({
+          service: 'gmail',
+          auth: {
+            user: "projectResume314159@gmail.com",
+            pass: "123$qweR"
+          }
+        });
+        
+        var mailOptions = {
+          from: 'projectResume314159@gmail.com',
+          to: 'projectResume314159@gmail.com',
+          subject: 'Resume Tracker',
+          text: "Please follow up on your job application from company: "+ job.company + " applied on: " + job.appliedDate
+        };
+     transporter.sendMail(mailOptions, function(error, info){ 
         if (error) {
-          console.log(error);
-        } else {
-          console.log('Email sent: ' + info.response);
-        }
-      });
-      res.json(dbJobs);
-    });
+      console.log(error);
+    } else {
+      console.log('Email sent: ' + info.response);
+    }
   });
+       
+      };
+       setTimeout (sendEmail, 259200000);
+       clearTimeout(sendEmail);
+       res.json(dbJobs);
+    });
+      
+    });
+
 
   app.delete("/api/jobposts/:id", function(req, res) {
     db.Jobs.destroy({ where: { id: req.params.id } }).then(function(dbJobs) {
