@@ -27,6 +27,10 @@ module.exports = function(app) {
   app.post("/api/jobposts", function(req, res) {
     const job = req.body;
     console.log(job);
+    if (job.interviewDate.length<1){
+      job.interviewDate = null;
+    }
+
     db.Jobs.create(job).then(function(dbJobs) {
       function sendEmail(){
         var transporter = nodemailer.createTransport({
