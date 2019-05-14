@@ -79,9 +79,7 @@ var handleFormSubmit = function(event) {
     interviweeName: $("#interviewee-name")
       .val()
       .trim(),
-    jobOffered: $("#status")
-      .val()
-      .trim(),
+    jobOffered: $("#status").val(),
     comments: $("#comments")
       .val()
       .trim()
@@ -156,11 +154,14 @@ function displayTable(jobs) {
 
     const interviweTd = $("<td>");
     const interviewDate = moment(job.interviewDate).format("MM/DD/YYYY");
-    interviweTd.text(job.interviewDate);
+    interviweTd.text(interviewDate);
     const interviweeTd = $("<td>");
     interviweeTd.text(job.interviweeName);
     const commentTd = $("<td>");
     commentTd.text(job.comments);
+
+    const offerTd = $("<td>");
+    offerTd.text(job.jobOffered);
 
     const editTd = $("<td>");
     const editBtn = $("<button>");
@@ -188,6 +189,7 @@ function displayTable(jobs) {
       interviweTd,
       interviweeTd,
       commentTd,
+      offerTd,
       editTd,
       deleteTd
     );
