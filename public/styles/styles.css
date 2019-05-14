@@ -235,6 +235,8 @@ font-family: 'Lato', sans-serif;
   font-family: 'Lato', sans-serif;
   align-content: right;
   border-color: rgba(223, 66, 66, 0.8);
+  margin-bottom: 30px;
+  margin-right: 30px;
 }
 
 #add-btn:hover {
@@ -280,6 +282,7 @@ footer {
 
 #form {
   background: rgba(202, 235, 242, 0.4);
+  height:
 }
 
 #resume1 {
