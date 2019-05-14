@@ -96,80 +96,13 @@
         </div>
       </div>
     </div>
+    <div id="container">
     <script>document.body.className += ' fade-out';
       $(function () {
         $('body').removeClass('fade-out');
       });
     </script>
 
-    
-    <div id="container">
-      <div id="banner">
-        <!-- Top Navigation Menu -->
-        <div class="topnav">
-          <a href="#home" class="active" id="resume1">Resume Tracker</a>
-          <!-- Navigation links (hidden by default) -->
-          <div id="myLinks">
-            <a href="index.html">Home</a>
-            <a href="add.html">Add New Application</a>
-            <a href="view.html">View Applications</a>
-          </div>
-          <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-          <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-          </a>
-        </div>
-        <h1 class="display-4" id="resume">Resume Tracker</h1>
-
-        <p class="lead" id="subtitle"></p>
-        <hr class="my-4">
-        <p></p>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg" href="view.html" id="view-home" role="button">View My Applications</a>
-          <a class="btn btn-primary btn-lg" id="add-home" href="add.html" role="button">Add a New Application</a>
-        </p>
-
-        <h2 id="par1_home" onload="displayJobs()">
-          Your Recommended Jobs:
-        </h2><br>
-        <div class="row">
-          <div class="col-sm-3">
-            <div class="card" id=card1>
-              <div class="card-body">
-                <h5 class="card-title">Web Developer</h5>
-                <p class="card-text">Full time web developer position at IBM</p>
-                <a href="#" class="btn btn-primary" id="apply">Apply</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Web Developer</h5>
-                <p class="card-text">Full time web developer position at IBM</p>
-                <a href="#" class="btn btn-primary" id="apply">Apply</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Web Developer</h5>
-                <p class="card-text">Full time web developer position at IBM</p>
-                <a href="#" class="btn btn-primary" id="apply">Apply</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Web Developer</h5>
-                <p class="card-text">Full time web developer position at IBM</p>
-                <a href="#" class="btn btn-primary" id="apply">Apply</a>
-              </div>
-            </div>
-          </div>
-        </div>
 
       </div><br><br><br>
       <footer>
@@ -209,5 +142,5 @@
     $("#card-text").html(job.appliedDate);
   }
 </script>
-
+</div>
 </html>
