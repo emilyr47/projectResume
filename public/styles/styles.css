@@ -298,6 +298,115 @@ footer {
   background-color: rgba(202, 235, 242, 0.6);
 }
 
+@media screen and (max-width: 992px) {
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    margin-left: 90px;
+  }
+
+  #home-view {
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+
+  #myLinks {
+    margin-left: 0px;
+    margin-bottom: 15px;
+    margin-right: 1000px;
+  }
+
+  #view-home {
+    margin-left: 15px;
+    margin-bottom: 0px;
+    
+  }
+
+  #add-home {
+    margin-left: 15px;
+    margin-bottom: 0px;
+    
+  }
+
+  #subtitle {
+    margin-left: 30px;
+  }
+
+  #new-app-view {
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+
+  .thead-dark {
+    width: 200px;
+  }
+
+  #view-add {
+    margin-left: 160px;
+    margin-bottom: 30px;
+  }
+
+  #dots {
+    margin-left: 220px;
+  }
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+  h1 {
+    margin-left: 30px;
+  }
+
+  #myLinks {
+    margin-left: 0px;
+    margin-bottom: 15px;
+    margin-right: 1000px;
+  }
+
+  #view-home {
+    margin-left: 15px;
+    margin-bottom: 0px;
+    
+  }
+
+  #add-home {
+    margin-left: 15px;
+    margin-bottom: 0px;
+    
+  }
+
+  #subtitle {
+    margin-left: 30px;
+  }
+
+  #new-app-view {
+    margin-left: 15px;
+    margin-bottom: 15px;
+  }
+
+  .thead-dark {
+    width: 200px;
+  }
+
+  #view-add {
+    margin-left: 160px;
+    margin-bottom: 30px;
+  }
+
+  #home-view {
+    margin-left: 160px;
+    margin-bottom: 30px;
+  }
+
+  #dots {
+    margin-left: 220px;
+  }
+}
+
+
+
+
 
 
 
