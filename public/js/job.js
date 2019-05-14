@@ -133,22 +133,6 @@ function populateJob() {
 
 function displayTable(jobs) {
   const table = $("#display-info");
-  // const headerTr = $("<tr>");
-  // table.append(headerTr);
-
-  // const columns = [
-  //   "company",
-  //   "Position",
-  //   "Date Applied",
-  //   "Days Applied",
-  //   "Edit",
-  //   "Delete"
-  // ];
-  // columns.forEach(column => {
-  //   const th = $("<th>");
-  //   th.text(column);
-  //   headerTr.append(th);
-  // });
 
   jobs.forEach(function(job, i) {
     const jobTr = $("<tr>");
@@ -169,6 +153,15 @@ function displayTable(jobs) {
     const b = moment().diff(moment(appliedDate), "days");
     console.log(b);
     daysTd.text(b);
+
+    const interviweTd = $("<td>");
+    const interviewDate = moment(job.interviewDate).format("MM/DD/YYYY");
+    interviweTd.text(job.interviewDate);
+    const interviweeTd = $("<td>");
+    interviweeTd.text(job.interviweeName);
+    const commentTd = $("<td>");
+    commentTd.text(job.comments);
+
     const editTd = $("<td>");
     const editBtn = $("<button>");
     editBtn.addClass("edit");
@@ -192,6 +185,9 @@ function displayTable(jobs) {
       postionTd,
       dateTd,
       daysTd,
+      interviweTd,
+      interviweeTd,
+      commentTd,
       editTd,
       deleteTd
     );
