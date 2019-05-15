@@ -1,5 +1,6 @@
 require("dotenv").config();
 var express = require("express");
+var cors = require('cors')
 var exphbs = require("express-handlebars");
 
 var db = require("./models");
@@ -13,6 +14,9 @@ var gmail=process.env.gmail
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+
+// CORS
+app.use(cors());
 
 // Handlebars
 app.engine(
