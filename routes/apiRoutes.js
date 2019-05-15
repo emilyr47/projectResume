@@ -1,6 +1,7 @@
 var db = require("../models");
 var nodemailer = require('nodemailer');
-var key=require("../keys");
+var key = require("../keys");
+var axios = require("axios");
 module.exports = function(app) {
   // Get all jobs
   app.get("/api/jobposts", function(req, res) {
