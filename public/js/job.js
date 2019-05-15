@@ -1,4 +1,3 @@
-// Get references to page elements
 var $submitBtn = $("#add-btn");
 
 // The API object contains methods for each kind of request we'll make
@@ -44,7 +43,7 @@ var API = {
   }
 };
 
-// refreshExamples gets new examples from the db and repopulates the list
+// refreshJObsets new examples from the db and repopulates the list
 var refreshJobs = function() {
   API.getJobs().then(function(jobs) {
     displayTable(jobs);
@@ -153,12 +152,25 @@ function displayTable(jobs) {
     daysTd.text(b);
 
     const interviweTd = $("<td>");
-    const interviewDate = moment(job.interviewDate).format("MM/DD/YYYY");
+    let interviewDate;
+    if (job.interviewDate === null) {
+      interviewDate = "N/A";
+    } else {
+      interviewDate = moment(job.interviewDate).format("MM/DD/YYYY");
+    }
     interviweTd.text(interviewDate);
-    const interviweeTd = $("<td>");
-    interviweeTd.text(job.interviweeName);
+    let interviweeTd = $("<td>");
+    if (job.interviweeName) {
+      interviweeTd.text(job.interviweeName);
+    } else {
+      interviweeTd.text("N/A");
+    }
     const commentTd = $("<td>");
-    commentTd.text(job.comments);
+    if (job.comments) {
+      commentTd.text(job.comments);
+    } else {
+      commentTd.text("N/A");
+    }
 
     const offerTd = $("<td>");
     offerTd.text(job.jobOffered);
