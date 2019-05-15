@@ -61,54 +61,50 @@
     <div class="row">
       <div class="col-sm-3">
         <div class="card" id=reminder-card>
-          <div class="card-body">
-            <h5 class="card-title" id="card-title"></h5>
-            <p class="card-text" id="card-text"></p>
-            <a href="#" class="btn btn-primary" id="complete">View Info</a>
+          <div class="card-body vessel1">
+            <div class="button1">
+            </div>
           </div>
         </div>
       </div>
       <div class="col-sm-3">
         <div class="card" id=reminder-card>
-          <div class="card-body">
-            <h5 class="card-title" id="card-title"></h5>
-            <p class="card-text" id="card-text"></p>
-            <a href="#" class="btn btn-primary" id="complete">View Info</a>
+          <div class="card-body vessel2">
+            <div class="button2">
+            </div>
           </div>
         </div>
       </div>
       <div class="col-sm-3">
         <div class="card" id=reminder-card>
-          <div class="card-body">
-            <h5 class="card-title" id="card-title"></h5>
-            <p class="card-text" id="card-text"></p>
-            <a href="#" class="btn btn-primary" id="complete">View Info</a>
+          <div class="card-body vessel3">
+            <div class="button3">
+            </div>
           </div>
         </div>
       </div>
       <div class="col-sm-3">
         <div class="card" id=reminder-card>
-          <div class="card-body">
-            <h5 class="card-title" id="card-title"></h5>
-            <p class="card-text" id="card-text"></p>
-            <a href="#" class="btn btn-primary" id="complete">View Info</a>
+          <div class="card-body vessel4">
+            <div class="button4">
+            </div>
           </div>
         </div>
       </div>
     </div>
     <div id="container">
-    <script>document.body.className += ' fade-out';
-      $(function () {
-        $('body').removeClass('fade-out');
-      });
-    </script>
+      <script>document.body.className += ' fade-out';
+        $(function () {
+          $('body').removeClass('fade-out');
+        });
+      </script>
 
 
-      </div>
-      <footer>
-        Copyright© 2019 Resume Tracker
-      </footer>
     </div>
+    <footer>
+      Copyright© 2019 Resume Tracker
+    </footer>
+  </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
@@ -141,6 +137,42 @@
     $("#card-title").html(job.company);
     $("#card-text").html(job.appliedDate);
   }
+
+  function displayJobs() {
+    var queryURL = "http://" + window.location.hostname + ":" + window.location.port + "/api/randomsearch";
+    console.log("This is the queryurl: " + queryURL)
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function (response) {
+
+
+
+      console.log("--------------------This is the response: " + JSON.stringify(response[1]));
+
+      $(".vessel1").prepend(JSON.stringify(response[0].title));
+      $(".vessel1").prepend("<br>")
+      $(".vessel1").prepend(JSON.stringify(response[0].company));
+      $(".button1").html('<a href="' + response[0].url + '" class="btn btn-primary" id="complete">Apply</a>');
+
+      $(".vessel2").prepend(JSON.stringify(response[1].title));
+      $(".vesse12").prepend("<br>")
+      $(".vessel2").prepend(JSON.stringify(response[1].company));
+      $(".button2").html('<a href="' + response[1].url + '" class="btn btn-primary" id="complete">Apply</a>');
+
+      $(".vessel3").prepend(JSON.stringify(response[3].title));
+      $(".vessel3").prepend("<br>")
+      $(".vessel3").prepend(JSON.stringify(response[3].company));
+      $(".button3").html('<a href="' + response[3].url + '" class="btn btn-primary" id="complete">Apply</a>');
+
+      $(".vessel4").prepend(JSON.stringify(response[4].title));
+      $(".vessel4").prepend("<br>")
+      $(".vessel4").prepend(JSON.stringify(response[4].company));
+      $(".button4").html('<a href="' + response[4].url + '" class="btn btn-primary" id="complete">Apply</a>');
+    })
+  }
+  displayJobs();
 </script>
 </div>
+
 </html>

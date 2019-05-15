@@ -1,6 +1,7 @@
 var db = require("../models");
 var nodemailer = require('nodemailer');
-var key=require("../keys");
+var key = require("../keys");
+var axios = require("axios");
 module.exports = function(app) {
   // Get all jobs
   app.get("/api/jobposts", function(req, res) {
@@ -79,4 +80,19 @@ module.exports = function(app) {
       res.json(dbJobs);
     });
   });
+
+  app.get("/api/randomsearch/", function(req, res) {
+
+    var url = "https://jobs.github.com/positions.json?description=javascript&location=united+states";
+    
+    axios.get(url).then(function(response) {
+
+        console.log("-------Your Response my good sir: ", response.data[0]);
+
+        res.send(response.data);
+
+    }).catch(function(err){console.log(err)});
+    //End Axios GET
+
+  });//End Exptess GET
 };

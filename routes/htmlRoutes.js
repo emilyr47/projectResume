@@ -18,6 +18,10 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/add.html"));
   });
 
+  app.get("/api/jobsearch/united+states/javascript", function(req, res){
+    res.sendFile(path.join(__dirname, "../public/index.html"));
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
