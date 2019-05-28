@@ -8,4 +8,4 @@ Anjana Hengaju
 Dmitriy Petrenko
 Ben p
 
-https://job-finder1234.herokuapp.com/
+http://project-resume-1.herokuapp.com
